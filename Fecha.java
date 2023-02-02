@@ -40,8 +40,8 @@ public class Fecha {
 		this.año = año;
 	}
 
-   private boolean esBsiesto() {
-	return(año%4==0 && año%100!=0 || año%400==0);
+	private boolean esBsiesto() {
+		return (año % 4 == 0 && año % 100 != 0 || año % 400 == 0);
 	}
 
 	public boolean fechaCorrecta() {
@@ -51,9 +51,11 @@ public class Fecha {
 		switch (mes) {
 		case 2:
 			if (esBsiesto()) {
-				diaCorrecto = 1 < dia && dia <= 28;}
-				else {diaCorrecto=1<dia && dia <=29; }
-			
+				diaCorrecto = 1 < dia && dia <= 28;
+			} else {
+				diaCorrecto = 1 < dia && dia <= 29;
+			}
+
 			break;
 		case 4:
 		case 6:
@@ -64,21 +66,30 @@ public class Fecha {
 		default:
 			diaCorrecto = 1 < dia && dia <= 31;
 		}
-		return  añoCorrecto && mesCorrecto && diaCorrecto;
+	
+		return añoCorrecto && mesCorrecto && diaCorrecto;
 	}
-		public int diaSiguiente() {
-		int diaNuevo=dia++;
-		if (diaNuevo>31 && mes==2 ) {dia=1; mes++;}
-		else if()
-			
-		}
 
+	public void diaSiguiente() {
+		dia++;
+		if(!fechaCorrecta()) {
+			dia=1;
+			mes++;
+			if (!fechaCorrecta()) {
+				mes = 1;
+				año++;
+			}
+		}
+	}
+
+
+
+		
 	
 
 	@Override
 	public String toString() {
 		return "Fecha [dia=" + dia + ", mes=" + mes + ", año=" + año + "]";
 	}
-
 
 }
