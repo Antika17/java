@@ -58,10 +58,7 @@ public class Person {
 		this.fechaNac = fechaNac;
 	}
 	
-	public void esMayorDeEdad() {
-		return fechaNac.until(LocalDate.now());
-		
-	}
+
 
 	@Override
 	public String toString() {

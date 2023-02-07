@@ -11,7 +11,7 @@ public class Fecha {
 
 	}
 
-	public Fecha(int dia, int mes, int año) {
+	public Fecha(int año, int mes, int dia) {
 		super();
 		this.dia = dia;
 		this.mes = mes;
@@ -93,17 +93,21 @@ public class Fecha {
 	@Override
 		public String toString() {
 			StringBuilder sb=new StringBuilder();
+			sb.append(año);
+			sb.append("-");
+			if(mes<10) {
+				sb.append("0");
+				}
+				sb.append(mes);
+				sb.append("-");
 			if(dia<10) {
 			sb.append("0");	
 			}
 			sb.append(dia);
-			sb.append("-");
-			if(mes<10) {
-			sb.append("0");
-			}
-			sb.append(mes);
-			sb.append("-");
-			sb.append(año);
+			
+			
+			
+			
 			
 			return  sb.toString();
 		
@@ -111,5 +115,6 @@ public class Fecha {
 
 
 	}
+
 
 

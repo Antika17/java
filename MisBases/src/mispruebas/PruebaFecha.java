@@ -6,8 +6,8 @@ public class PruebaFecha {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-Fecha f1 = new Fecha(10,10,2005);
-Fecha f2= new Fecha(10,20,2000);
+Fecha f1 = new Fecha(2005,10,5);
+Fecha f2= new Fecha(2000,2,20);
 
 
 if (f1.fechaCorrecta()) {
